@@ -1,0 +1,298 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Pépinière de la CASO</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
+	<link rel="stylesheet" href="css/app.css">
+	<script src="vendor/etdsolutions/modernizr/modernizr.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+				<span class="sr-only">Toggle navigation</span> <span class="fa-bars"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">Pépinière de la CASO</a>
+		</div>
+		<div class="collapse navbar-collapse" id="navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="index.html">Pépinière <span class="sr-only">(current)</span></a></li>
+				<li><a href="concept.html">Concept</a></li>
+				<li><a href="entreprises.html">Entreprises</a></li>
+				<li><a href="actualites.html">Actualités</a></li>
+			</ul>
+			<div class="navbar-right">
+				<a href="nous-rejoindre.html" class="navbar-btn btn btn-primary">Nous rejoindre</a>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<main>
+
+	<div id="main-1" class="page">
+		<div class="bg"></div>
+		<div class="content">
+			<h1>La pépinière de la CASO</h1>
+
+			<h2>accompagne votre réussite</h2>
+		</div>
+		<div class="bottom hidden-xs">
+			<span class="fa fa-arrow-circle-o-down"></span>
+		</div>
+	</div>
+
+	<div id="main-2" class="page">
+		<div class="bg lazy"></div>
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-8">
+						<h2>Notre mission</h2>
+
+						<p>A proximité du centre ville de Saint-Omer et de la zone commerciale « Les Frais Fonds », la pépinière d’entreprises de la CASO offre une aide pour les jeunes entreprises dans un environnement de grande qualité.</p>
+
+						<p>Destinée à l’accueil des entreprises nouvellement créées, jusqu’à 5 ans après la date d’immatriculation, la pépinière d’entreprises de la CASO est ouverte à tous types de projets hors professions libérales et commerces de proximité.</p>
+					</div>
+					<div class="col-sm-4 hidden-xs">
+						<img src="img/loader.gif" class="img-thumbnail img-responsive" data-src="img/carte.jpg">
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<div id="main-3" class="page">
+		<div class="bg lazy"></div>
+		<div class="circle-container main-page">
+			<div class="circle">
+				<p>“Lorem ipsum dolor sit amet, consectetur<br> adipiscing elit. Nullam id eleifend mi, sagittis<br> fermentum lorem.”
+				</p>
+
+				<h3>Sabrina Smati</h3>
+
+				<p>Directrice</p>
+			</div>
+		</div>
+	</div>
+
+	<div id="main-4" class="page">
+		<div class="bg lazy"></div>
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 hidden-xs">
+						<img src="img/loader.gif" class="img-thumbnail img-responsive" data-src="img/salle-reunion.jpg">
+					</div>
+					<div class="col-xs-12 col-sm-8">
+						<h2>Pourquoi intégrer la pépinière ? </h2>
+						<ul>
+							<li>Bénéficier d’un immobilier adapté à la création de votre entreprise (bureau, plateau tertiaire, atelier),</li>
+							<li>Etre accompagné dans votre parcours de création et tout au long des premières années de développement de votre activité,</li>
+							<li>Disposer de services partagés au sein de la pépinière pour faciliter votre quotidien,</li>
+							<li>Bénéficier d’un partage d’expérience avec d’autres chefs d’entreprises créateurs qui font face aux mêmes questions que vous,</li>
+							<li>Etre intégré dans un réseau d’acteurs publics et privés auprès desquels la pépinière pourra vous ouvrir les portes.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<div id="main-5" class="page">
+		<div class="bg lazy"></div>
+		<h2 class="question">Qu'attendez-vous ?</h2>
+		<div id="cta" class="bottom">
+			<a href="nous-rejoindre.html" class="btn btn-transparent btn-lg">Rejoignez-nous</a>
+		</div>
+
+	</div>
+
+</main>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="vendor/etdsolutions/jquery/jquery.min.js"><\/script>')</script>
+<script src="js/lodash.js"></script>
+<script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendor/etdsolutions/waypoints/jquery.waypoints.min.js"></script>
+<script>
+
+	jQuery(document).ready(function () {
+
+		var old_timestamp = 0,
+				old_dir, old_win_size,
+				mobile_break = 1024;
+
+		var Lazy = {
+			loadBg: function (e) {
+				e.find(".bg").removeClass("lazy")
+			},
+			loadImg: function (e) {
+				e.each(function () {
+					$(this).attr("src", $(this).data("src"))
+				})
+			}
+		};
+
+		var Scroll = {
+
+			$currentPage: $(".page").first(),
+
+			scrollHandlerNT: function (e) {
+
+				if (e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0 || e.which == 40) {
+					if (Scroll.$currentPage.nextAll(".page").length) {
+						Scroll.$currentPage = Scroll.$currentPage.nextAll(".page").first();
+					}
+				} else {
+					if (Scroll.$currentPage.prevAll(".page").length) {
+						Scroll.$currentPage = Scroll.$currentPage.prevAll(".page").first();
+					}
+				}
+
+				$("html, body").stop().animate({
+					scrollTop: Scroll.$currentPage.offset().top ? Scroll.$currentPage.offset().top - 80 : 0
+				}, 1000);
+
+				return;
+			},
+
+			scrollHandler: function (e) {
+				Scroll.throttledScroller || (Scroll.throttledScroller = _.throttle(this.scrollHandlerNT, 1000, {
+					trailing: false
+				}));
+				Scroll.throttledScroller(e)
+			},
+
+			stuck: function (e) {
+				e == "up" ? $(this).find(".bg").removeClass("current") : $(this).find(".bg").addClass("current")
+			},
+
+			reveal: function (e, t) {
+				e == "up" ? $(this).find(t).addClass("hide") : $(this).find(t).removeClass("hide")
+			},
+
+			revealOpp: function (e, t) {
+				e == "down" ? $(this).find(t).addClass("hide") : $(this).find(t).removeClass("hide")
+			},
+
+			dotFiller: function (e, t) {
+				e == "down" ? (Scroll.$currentPage = $(this), $("#pagination").children("a:nth-child(" + t + ")").addClass("active")) : $("#pagination").children("a:nth-child(" + t + ")").removeClass("active")
+			},
+
+			paginationDarkOn: function (e) {
+				e == "up" ? $("#pagination").removeClass("dark") : $("#pagination").addClass("dark")
+			},
+
+			paginationDarkOff: function (e) {
+				e == "down" ? $("#pagination").removeClass("dark") : $("#pagination").addClass("dark")
+			},
+
+			sign: function (e) {
+				return e < 0 ? -1 : 1
+			}
+
+		};
+
+		var handlers = [
+
+			function (dir) {
+				Lazy.loadBg($("#main-3"));
+			},
+
+			function (dir) {
+
+				if (dir === "down") {
+					$(this.element).find(".bg").addClass("stuck");
+				} else {
+					$(this.element).find(".bg").removeClass("stuck");
+				}
+
+				Lazy.loadBg($("#main-4"));
+				Lazy.loadImg($("#main-4 img"));
+			},
+
+			function(dir) {
+				Lazy.loadBg($("#main-5"));
+			}
+		];
+
+		$.each(handlers, function (n) {
+
+			$("#main-" + (n + 2)).waypoint(this, {
+				offset: "bottom-in-view"
+			})
+
+		});
+
+		$("body").on("keydown", function (e) {
+			(e.which == 40 || e.which == 38) && Scroll.scrollHandler(e)
+		});
+
+		$(window).resize(function() {
+
+			var win = $(this);
+
+			if ((!old_win_size || old_win_size > mobile_break) && win.width() <= mobile_break) {
+
+				$(window).off("DOMMouseScroll mousewheel");
+
+			} else if ((!old_win_size || old_win_size <= mobile_break) && win.width() > mobile_break) {
+
+				$(window).on("DOMMouseScroll mousewheel", function (event) {
+
+					var animated = $(":animated");
+
+					event.preventDefault();
+
+					if (old_dir !== Scroll.sign(event.originalEvent.wheelDelta) && animated.length !== 0) {
+						animated.stop();
+						Scroll.scrollHandlerNT(event);
+					}
+
+					old_dir = Scroll.sign(n.originalEvent.wheelDelta);
+
+					if (event.timeStamp - old_timestamp < 50) {
+						old_timestamp = event.timeStamp;
+						return;
+					}
+
+					old_timestamp = event.timeStamp;
+
+					Scroll.scrollHandler(n);
+
+				});
+
+			}
+
+			old_win_size = win.width();
+
+			if (old_win_size > mobile_break ) {
+
+				var offsetTop = 0;
+
+				if (Scroll.$currentPage) {
+					offsetTop = Scroll.$currentPage.offset().top;
+				}
+
+				$("body").scrollTop(offsetTop ? offsetTop - 80 : 0);
+
+			}
+		});
+
+
+		$(window).resize();
+
+		Lazy.loadBg($("#main-2"));
+		Lazy.loadImg($("#main-2 img"));
+
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+/*
+ * @package      Template pour la pépinière d'entreprises de la CASO
+ *
+ * @version      1.0
+ * @copyright    Copyright (C) 2015 ETD Solutions, SARL Etudoo. Tous droits réservés.
+ * @license      Propriétaire
+ * @author       ETD Solutions http://www.etd-solutions.com
+**/
+
+//
+// Base
+// ---------------------------------------
+
+// Body
+// --------------------------
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+ul {
+    padding: 0 0 0 20px;
+    margin: 10px 0;
+}
+
+// Navbar
+// --------------------------
+
+.navbar {
+
+    &, .btn {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: @font-size-small;
+    }
+
+    > .container .navbar-brand {
+        display: inline-block;
+        padding: 0;
+        margin: 20px 0;
+        width: 117px;
+        height: 40px;
+        .text-hide();
+        background-image: url(../img/logo.jpg);
+    }
+}
+
+.navbar-nav > li {
+    padding: 0 30px;
+
+    > a {
+        .transition(color .2s ease-in-out);
+    }
+
+    @media (min-width: @screen-lg-min) {
+        padding: 0 55px;
+    }
+}
+
+// Main
+// --------------------------
+
+main {
+    height: 100%;
+    padding-top: 80px;
+
+    > div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Éléments
+// --------------------------
+
+.bg {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-attachment: fixed;
+    background-color: #FFF;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section {
+    position: relative;
+    padding: 60px 0;
+    color: #000;
+    background: #fff;
+    text-align: left;
+    z-index: 1;
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 16px;
+        color: @brand-primary;
+        font-size: 30px;
+        font-weight: normal;
+    }
+}
+
+.circle-container {
+    position: absolute;
+    display: table;
+    width: 450px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    margin-top: -225px;
+    margin-left: -225px;
+    padding: 25px;
+    background: fade(#fff, 10%);
+    border: 1px solid #fff;
+    border-radius: 450px;
+}
+
+.circle {
+    display: table-cell;
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    border-radius: 400px;
+    vertical-align: middle;
+}
+
+.lazy {
+    background-image: none !important;
+}
+
+.bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding-top: 100px;
+    background: linear-gradient(to bottom, transparent, #000) repeat scroll 0% 0% transparent;
+    #gradient > .vertical(transparent, #000, 0, 100);
+
+    span {
+        position: relative;
+        bottom: 20px;
+        font-size: 4em;
+    }
+}
+
+.btn-transparent {
+    .button-variant(#fff; transparent; #fff);
+}
+
+// Pages
+// --------------------------
+
+#main-1 {
+
+    .bg {
+        background-image: url(../img/home1b.jpg);
+    }
+
+    .content {
+        position: absolute;
+        width: 100%;
+        top: 30%;
+        color: #fff;
+        text-shadow: 1px 1px 1px fade(#000, 50%);
+    }
+
+    h1 {
+        font-size: 3em;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 2em;
+        font-weight: normal;
+    }
+
+
+}
+
+#main-2 {
+
+    .bg {
+        background-image: url(../img/main2.jpg);
+    }
+
+}
+
+#main-3 {
+    color: #000;
+
+    .bg {
+        background-image: url(../img/main2.jpg);
+
+        &.stuck {
+            margin-top: -80px;
+            background-attachment: local;
+        }
+    }
+
+    .circle-container {
+        width: 500px;
+        height: 500px;
+        top: 45%;
+        left: 45%;
+        margin-top: -250px;
+        margin-left: -250px;
+    }
+
+}
+
+#main-4 {
+     .bg {
+         background-image: url(../img/main4.jpg);
+     }
+ }
+
+#main-5 {
+    .bg {
+        background-image: url(../img/main5.jpg);
+    }
+
+    h2 {
+        position: relative;
+        top: 30%;
+        margin: 0;
+        font-size: 46px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px fade(#000, 80%);
+    }
+
+    .bottom {
+        padding: 60px 0;
+        background: fade(#462d79, 90%);
+
+        h3 {
+            font-size: 32px;
+            font-weight: 600;
+            margin: 0 0 30px;
+        }
+
+        .btn {
+            width: 300px;
+        }
+    }
+}
